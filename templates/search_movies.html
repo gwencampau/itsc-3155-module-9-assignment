@@ -6,4 +6,32 @@
 <h1 class="mb-5">Search Movie Ratings</h1>
 <p class="mb-3">Search for a movie rating below</p>
 <!-- TODO: Feature 3 -->
+<form action="/movies/search" method="get">
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Search..." aria-label="Search" aria-describedby="basic-addon2">
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="submit" value="{{ search_title }}">Search</button>
+        </div>
+    </div>
+</form>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Title</th>
+        <th scope="col">Director</th>
+        <th scope="col">Rating</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for movie in movies %}
+        <tr>
+            <td>{{ movie.id }}</td>
+            <td>{{ movie.title }}</td>
+            <td>{{ movie.director }}</td>
+            <td>{{ movie.rating }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+  </table>
 {% endblock %}
