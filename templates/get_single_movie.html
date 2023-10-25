@@ -5,4 +5,14 @@
 {% block body %}
 <h1 class="mb-5"></h1>
 <!-- TODO: Feature 4 -->
+<div class="container-sm">
+    <h1>{{title}}</h1>
+    <p>Id: {{id}}</p>
+    <p>Rating: {{rating}}</p>
+    <p>Director: {{director}}</p>
+</div>
+<div class="d-grid gap-2 d-md-block">
+    <button class="btn btn-primary" type="button">Edit</button>
+    <button class="btn btn-primary" type="button">Delete</button>
+</div>
 {% endblock %}
