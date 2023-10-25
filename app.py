@@ -38,10 +38,11 @@ def create_movie():
 
 @app.get('/movies/search')
 def search_movies():
-    # TODO: Feature 3
     search_title = request.args.get('search_title', '').lower()
-    search_results = [movie for movie in movies if search_title in movie['title'].lower()]
-    
+    print(f'Search Title: {search_title}')
+    search_results = [movie for movie in movies if search_title in movie.title.lower()]
+    print(f'Search Results: {search_results}')
+
     return render_template('search_movies.html', search_results = search_results, search_title = search_title)
 
 

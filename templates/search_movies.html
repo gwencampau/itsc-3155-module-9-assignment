@@ -8,9 +8,9 @@
 <!-- TODO: Feature 3 -->
 <form action="/movies/search" method="get">
     <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="Search..." aria-label="Search" aria-describedby="basic-addon2">
+        <input type="text" class="form-control" name="search_title" placeholder="Search..." aria-label="Search" aria-describedby="basic-addon2">
         <div class="input-group-append">
-            <button class="btn btn-outline-secondary" type="submit" value="{{ search_title }}">Search</button>
+            <button class="btn btn-outline-secondary" type="submit">Search</button>
         </div>
     </div>
 </form>
@@ -24,7 +24,7 @@
       </tr>
     </thead>
     <tbody>
-        {% for movie in movies %}
+        {% for movie in search_results %}
         <tr>
             <td>{{ movie.id }}</td>
             <td>{{ movie.title }}</td>
