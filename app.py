@@ -62,7 +62,6 @@ def update_movie(movie_id: int):
     movie_repository.update_movie(movie_id, title, director, rating)
     return redirect(f'/movies/{movie_id}')
 
-
 @app.post('/movies/<int:movie_id>/delete')
 def delete_movie(movie_id: int):
     # TODO: Feature 6
