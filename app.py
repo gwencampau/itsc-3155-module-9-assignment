@@ -57,6 +57,10 @@ def get_edit_movies_page(movie_id: int):
 def update_movie(movie_id: int):
     # TODO: Feature 5
     # After updating the movie in the database, we redirect back to that single movie page
+    title=request.form.get(title)
+    director=request.form.get(director)
+    rating=int(request.form.get(rating))
+    movie_repository.update_movie(movie_id, title, director, rating)
     return redirect(f'/movies/{movie_id}')
 
 
