@@ -27,7 +27,7 @@ def get_movie_repository():
             # Perform a linear search through the in-memory database
             for movie in self._db.values():
                 # If the movie title matches, return the movie
-                if movie.title == title:
+                if movie.title.lower() == title:
                     return movie
             # If we made it this far, no movies matched, so return None
             return None
