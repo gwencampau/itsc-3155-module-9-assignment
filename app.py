@@ -55,6 +55,9 @@ def get_single_movie(movie_id: int):
 
 @app.get('/movies/<int:movie_id>/edit')
 def get_edit_movies_page(movie_id: int):
+    movie = movie_repository.get_movie_by_id(movie_id)
+    if movie is None:
+        return "Movie not in database", 400
     return render_template('edit_movies_form.html', id=movie_id)
 
 
