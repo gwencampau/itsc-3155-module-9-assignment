@@ -12,7 +12,11 @@
     <p>Director: {{director}}</p>
 </div>
 <div class="d-grid gap-2 d-md-block">
-    <button class="btn btn-primary" type="button">Edit</button>
-    <button class="btn btn-primary" type="button">Delete</button>
+    <form action="/movies/{{id}}/edit" style="float:left;margin-right: 2px;" method="get">
+        <button class="btn btn-primary" type="submit">Edit</button>
+    </form>
+    <form action="/movies/{{id}}/delete" style="float:left;margin-left:2px;" method="post">
+        <button class="btn btn-primary" type="submit">Delete</button>
+    </form>
 </div>
 {% endblock %}
