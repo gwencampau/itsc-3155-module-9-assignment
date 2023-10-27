@@ -16,12 +16,12 @@
       </tr>
     </thead>
     <tbody>
-        {% for movie in movies %}
+        {% for movie_id, movie_info in movies.items() %}
         <tr>
-            <td>{{ movie.id }}</td>
-            <td>{{ movie.title }}</td>
-            <td>{{ movie.director }}</td>
-            <td>{{ movie.rating }}</td>
+            <td>{{ movie_id }}</td>
+            <td>{{ movie_info["title"] }}</td>
+            <td>{{ movie_info["director"] }}</td>
+            <td>{{ movie_info["rating"] }}</td>
         </tr>
         {% endfor %}
     </tbody>
