@@ -21,6 +21,3 @@ def test_data_input(test_app):
     assert 'John Doe' in compare
     assert 'The unkown man' in compare
     assert '5' in compare
-
-
-    
